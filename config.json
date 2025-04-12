@@ -1,0 +1,972 @@
+{
+  "slices": [
+    {
+      "id": "3458764624611646391",
+      "status": "Created",
+      "title": "slice: Register Customer",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764624611646358",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "context": "INTERNAL",
+          "slice": "slice: Register Customer",
+          "title": "Register Customer",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611646274",
+              "type": "OUTBOUND",
+              "title": "Customer registered",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764624611646363",
+              "type": "INBOUND",
+              "title": "screen",
+              "elementType": "SCREEN"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": true,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764624611646274",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "context": "INTERNAL",
+          "slice": "slice: Register Customer",
+          "title": "Customer registered",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611646459",
+              "type": "OUTBOUND",
+              "title": "customers",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764624611646643",
+              "type": "OUTBOUND",
+              "title": "customers to activate",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764624611646358",
+              "type": "INBOUND",
+              "title": "Register Customer",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [
+        {
+          "id": "3458764624611646363",
+          "groupId": "3458764624611646366",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "slice": "slice: Register Customer",
+          "title": "screen",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611646358",
+              "type": "OUTBOUND",
+              "title": "Register Customer",
+              "elementType": "COMMAND"
+            }
+          ],
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "customer"
+      ]
+    },
+    {
+      "id": "3458764624611646487",
+      "status": "Created",
+      "title": "slice: read-model",
+      "context": "",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764624611646459",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "context": "INTERNAL",
+          "slice": "slice: read-model",
+          "title": "customers",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611646480",
+              "type": "OUTBOUND",
+              "title": "screen",
+              "elementType": "SCREEN"
+            },
+            {
+              "id": "3458764624611646274",
+              "type": "INBOUND",
+              "title": "Customer registered",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [
+        {
+          "id": "3458764624611646480",
+          "groupId": "3458764624611646483",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "slice": "slice: read-model",
+          "title": "screen",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611646459",
+              "type": "INBOUND",
+              "title": "customers",
+              "elementType": "READMODEL"
+            }
+          ],
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "customer"
+      ]
+    },
+    {
+      "id": "3458764624611715217",
+      "status": "Created",
+      "title": "slice: customers to activate",
+      "context": "",
+      "commands": [],
+      "events": [
+        {
+          "id": "3458764624611715015",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "context": "INTERNAL",
+          "slice": "slice: customers to activate",
+          "title": "customer activated",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611646643",
+              "type": "OUTBOUND",
+              "title": "customers to activate",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764624611715118",
+              "type": "INBOUND",
+              "title": "Activate Customer",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [
+        {
+          "id": "3458764624611646643",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "context": "INTERNAL",
+          "slice": "slice: customers to activate",
+          "title": "customers to activate",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            },
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611715115",
+              "type": "OUTBOUND",
+              "title": "processor",
+              "elementType": "AUTOMATION"
+            },
+            {
+              "id": "3458764624611646274",
+              "type": "INBOUND",
+              "title": "Customer registered",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764624611715015",
+              "type": "INBOUND",
+              "title": "customer activated",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": true,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [],
+      "processors": [],
+      "tables": [],
+      "specifications": [
+        {
+          "vertical": true,
+          "id": "3458764624611792861",
+          "sliceName": "slice: customers to activate",
+          "title": "spec: customers to activate",
+          "given": [
+            {
+              "title": "Customer registered",
+              "id": "3458764624611792864",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "customerId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "name",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "email",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                }
+              ],
+              "linkedId": "3458764624611646274",
+              "expectEmptyList": false
+            }
+          ],
+          "when": [],
+          "then": [
+            {
+              "title": "customers to activate",
+              "id": "3458764624611792863",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_READMODEL",
+              "fields": [
+                {
+                  "name": "customerId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "name",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "email",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                }
+              ],
+              "linkedId": "3458764624611646643",
+              "expectEmptyList": false
+            }
+          ],
+          "comments": []
+        },
+        {
+          "vertical": true,
+          "id": "3458764624611877940",
+          "sliceName": "slice: customers to activate",
+          "title": "spec: customers to activate todo list closed",
+          "given": [
+            {
+              "title": "Customer registered",
+              "id": "3458764624611877942",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "customerId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "name",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "email",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                }
+              ],
+              "linkedId": "3458764624611646274",
+              "expectEmptyList": false
+            },
+            {
+              "title": "customer activated",
+              "previousNodeId": "3458764624611877942",
+              "id": "3458764624611877943",
+              "index": 1,
+              "specRow": -1,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "customerId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                }
+              ],
+              "linkedId": "3458764624611715015",
+              "expectEmptyList": false
+            }
+          ],
+          "when": [],
+          "then": [
+            {
+              "title": "customers to activate",
+              "id": "3458764624611877941",
+              "index": 0,
+              "specRow": -1,
+              "type": "SPEC_READMODEL",
+              "fields": [
+                {
+                  "name": "customerId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "name",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                },
+                {
+                  "name": "email",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single",
+                  "schema": ""
+                }
+              ],
+              "linkedId": "3458764624611646643",
+              "expectEmptyList": false
+            }
+          ],
+          "comments": []
+        }
+      ],
+      "actors": [],
+      "aggregates": [
+        "customer"
+      ]
+    },
+    {
+      "id": "3458764624611715285",
+      "status": "Created",
+      "title": "slice: Activate Customer",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764624611715118",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "slice": "slice: Activate Customer",
+          "title": "Activate Customer",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611715015",
+              "type": "OUTBOUND",
+              "title": "customer activated",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764624611715115",
+              "type": "INBOUND",
+              "title": "processor",
+              "elementType": "AUTOMATION"
+            }
+          ],
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764624611715015",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "context": "INTERNAL",
+          "slice": "slice: Activate Customer",
+          "title": "customer activated",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611646643",
+              "type": "OUTBOUND",
+              "title": "customers to activate",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764624611715118",
+              "type": "INBOUND",
+              "title": "Activate Customer",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [],
+      "processors": [
+        {
+          "id": "3458764624611715115",
+          "groupId": "3458764624611715117",
+          "domain": "",
+          "modelContext": "Customer Registration",
+          "slice": "slice: Activate Customer",
+          "title": "processor",
+          "fields": [
+            {
+              "name": "customerId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single",
+              "schema": ""
+            }
+          ],
+          "type": "AUTOMATION",
+          "description": "",
+          "aggregate": "customer",
+          "aggregateDependencies": [
+            "customer"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764624611715118",
+              "type": "OUTBOUND",
+              "title": "Activate Customer",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764624611646643",
+              "type": "INBOUND",
+              "title": "customers to activate",
+              "elementType": "READMODEL"
+            }
+          ],
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "customer"
+      ]
+    }
+  ],
+  "flows": [],
+  "aggregates": [
+    {
+      "id": "3458764624611715626",
+      "title": "customer",
+      "fields": [
+        {
+          "name": "customerId",
+          "example": "",
+          "mapping": "",
+          "optional": false,
+          "technicalAttribute": false,
+          "generated": false,
+          "idAttribute": true,
+          "type": "String",
+          "cardinality": "Single",
+          "schema": ""
+        }
+      ],
+      "service": null,
+      "type": "AGGREGATE"
+    }
+  ],
+  "actors": [],
+  "context": "Customer Registration",
+  "codeGen": {
+    "application": "Customer Registration",
+    "domain": "",
+    "rootPackage": "de.nebulit.registration",
+    "contextPackage": ""
+  },
+  "boardId": "uXjVIUZz1oE="
+}
